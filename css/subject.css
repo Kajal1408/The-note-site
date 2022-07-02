@@ -1,0 +1,31 @@
+.top {
+  padding-top: 100px;
+}
+body {
+  background-color: rgba(211, 211, 211, 0.705);
+}
+.card {
+  height: auto;
+  width: auto;
+}
+.card1 {
+  background-color: rgb(120, 129, 138);
+  text-align: center;
+}
+.inbtwpadding {
+  padding-top: 30px;
+}
+.fotterpadding {
+  background-color: rgb(27, 27, 27);
+  color: white;
+  padding: 20px;
+}
+footer {
+  padding-top: 40px;
+}
+.bg-color {
+  background-color: rgb(175, 175, 175);
+}
+.card {
+  border-radius: 50px;
+}

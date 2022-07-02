@@ -1,0 +1,17 @@
+.box {
+  border: 0px solid grey;
+  height: auto;
+  width: auto;
+  padding: 5px;
+}
+.size {
+  height: 50px;
+  width: 50px;
+}
+.padding {
+  padding: 20px;
+}
+.bg {
+  background-color: lightgrey;
+  height: 899px;
+}

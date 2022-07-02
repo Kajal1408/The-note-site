@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+          <a href="" class="navbar-brand font-weight-bold">THE NOTES SITE</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsenavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="#services" class="nav-link text-white">SERVICES</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">LOGOUT</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">TEAM</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="bg">
+    <div class="container ">
+        <?php $con=mysqli_connect("localhost","root","","subjects");
+        session_start();
+        $select_query="SELECT subjectname,information,votes,link FROM subjectName";
+        $select_query_result=mysqli_query($con,$select_query);
+        $row=mysqli_fetch_array($select_query_result);
+        ?>
+        <?php while($row){?>
+      <div class="box">
+          <table class="table table-hover">
+              <tr>
+                  <td><div class="row padding"><button class="size  btn btn-dark"><span class="fas fa-angle-up"></span></button></div>
+                                        <div class="row padding"><h2><?php echo($row['votes'])?> </h2></div>
+                   <div class="row padding"><button class="size btn btn-dark"><span class="fas fa-angle-down"></span></button></div> </td>
+                  <td>
+                      <br>
+                        <h2><?php echo($row['subjectname'])?> </h2>
+                        <br>
+                        <br>
+                        <h3><?php echo($row['information'])?> </h3>
+                        <br>
+                        <br>
+                        <h4><?php echo($row['link'])?> </h4>
+                  </td>
+              </tr>
+          </table>
+          </div>
+          <?php }?>
+      </div>
+    </div>
+</div>
+  </body>
+</html>
